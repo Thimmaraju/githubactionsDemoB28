@@ -1,13 +1,13 @@
-name: Playwright Tests
+name: Orange HRM Tests
 on:
-  push:
-    branches: [ main, master ]
   pull_request:
     branches: [ main, master ]
+  schedule: 
+    - cron : '15 5 * * *'
 jobs:
-  test:
+  Test_On_Windows:
     timeout-minutes: 60
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     steps:
     - uses: actions/checkout@v4
     - uses: actions/setup-node@v4
